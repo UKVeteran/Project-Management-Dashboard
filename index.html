@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Project Management Dashboard</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="app-container">
+  <div class="app-header">
+    <div class="app-header-left">
+      <span class="app-icon"></span>
+      <p class="app-name">Portfolio</p>
+      <div class="search-wrapper">
+        <input class="search-input" type="text" placeholder="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-search" viewBox="0 0 24 24">
+          <defs></defs>
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="M21 21l-4.35-4.35"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="app-header-right">
+      <button class="mode-switch" title="Switch Theme">
+        <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
+          <defs></defs>
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+        </svg>
+      </button>
+      <button class="add-btn" title="Add New Project">
+        <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" /></svg>
+      </button>
+      <button class="notification-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+          <path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
+      </button>
+      <button class="profile-btn">
+        <img src="https://avatars.githubusercontent.com/u/39216339?s=400&u=a6567750e63138e3481bdba781e0031ece8f8fa4&v=4" />
+        <span>J-MAN</span>
+      </button>
+    </div>
+    <button class="messages-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
+    </button>
+  </div>
+  <div class="app-content">
+    <div class="app-sidebar">
+      <a href="" class="app-sidebar-link active">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" /></svg>
+      </a>
+      <a href="" class="app-sidebar-link">
+        <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-pie-chart" viewBox="0 0 24 24">
+          <defs />
+          <path d="M21.21 15.89A10 10 0 118 2.83M22 12A10 10 0 0012 2v10z" />
+        </svg>
+      </a>
+      <a href="" class="app-sidebar-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" /></svg>
+      </a>
+      <a href="" class="app-sidebar-link">
+        <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-settings" viewBox="0 0 24 24">
+          <defs />
+          <circle cx="12" cy="12" r="3" />
+          <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
+        </svg>
+      </a>
+    </div>
+    <div class="projects-section">
+      <div class="projects-section-header">
+        <p>Projects</p>
+        <p class="time">December, 12</p>
+      </div>
+      <div class="projects-section-line">
+        <div class="projects-status">
+          <div class="item-status">
+            <span class="status-number">45</span>
+            <span class="status-type">In Progress</span>
+          </div>
+          <div class="item-status">
+            <span class="status-number">24</span>
+            <span class="status-type">Upcoming</span>
+          </div>
+          <div class="item-status">
+            <span class="status-number">62</span>
+            <span class="status-type">Total Projects</span>
+          </div>
+        </div>
+        <div class="view-actions">
+          <button class="view-btn list-view" title="List View">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
+              <line x1="8" y1="6" x2="21" y2="6" />
+              <line x1="8" y1="12" x2="21" y2="12" />
+              <line x1="8" y1="18" x2="21" y2="18" />
+              <line x1="3" y1="6" x2="3.01" y2="6" />
+              <line x1="3" y1="12" x2="3.01" y2="12" />
+              <line x1="3" y1="18" x2="3.01" y2="18" /></svg>
+          </button>
+          <button class="view-btn grid-view active" title="Grid View">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+              <rect x="3" y="3" width="7" height="7" />
+              <rect x="14" y="3" width="7" height="7" />
+              <rect x="14" y="14" width="7" height="7" />
+              <rect x="3" y="14" width="7" height="7" /></svg>
+          </button>
+        </div>
+      </div>
+      <div class="project-boxes jsGridView">
+        <div class="project-box-wrapper">
+          <div class="project-box" style="background-color: #fee4cb;">
+            <div class="project-box-header">
+              <span>December 10, 2020</span>
+              <div class="more-wrapper">
+                <button class="project-btn-more">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                    <circle cx="12" cy="12" r="1" />
+                    <circle cx="12" cy="5" r="1" />
+                    <circle cx="12" cy="19" r="1" /></svg>
+                </button>
+          </div>
+        </div>
+        <div class="project-box-content-header">
+          <p class="box-content-header">Web Designing</p>
+          <p class="box-content-subheader">Prototyping</p>
+        </div>
+        <div class="box-progress-wrapper">
+          <p class="box-progress-header">Progress</p>
+          <div class="box-progress-bar">
+            <span class="box-progress" style="width: 60%; background-color: #ff942e"></span>
+          </div>
+          <p class="box-progress-percentage">60%</p>
+        </div>
+        <div class="project-box-footer">
+          <div class="participants">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+            <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+            <button class="add-participant" style="color: #ff942e;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </button>
+          </div>
+          <div class="days-left" style="color: #ff942e;">
+            2 Days Left
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="project-box-wrapper">
+      <div class="project-box" style="background-color: #e9e7fd;">
+        <div class="project-box-header">
+          <span>December 10, 2020</span>
+          <div class="more-wrapper">
+            <button class="project-btn-more">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                <circle cx="12" cy="12" r="1" />
+                <circle cx="12" cy="5" r="1" />
+                <circle cx="12" cy="19" r="1" /></svg>
+            </button>
+          </div>
+        </div>
+        <div class="project-box-content-header">
+          <p class="box-content-header">Testing</p>
+          <p class="box-content-subheader">Prototyping</p>
+        </div>
+        <div class="box-progress-wrapper">
+          <p class="box-progress-header">Progress</p>
+          <div class="box-progress-bar">
+            <span class="box-progress" style="width: 50%; background-color: #4f3ff0"></span>
+          </div>
+          <p class="box-progress-percentage">50%</p>
+        </div>
+        <div class="project-box-footer">
+          <div class="participants">
+            <img src="https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1215&q=80" alt="participant">
+            <img src="https://images.unsplash.com/photo-1583195764036-6dc248ac07d9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2555&q=80" alt="participant">
+            <button class="add-participant" style="color: #4f3ff0;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </button>
+          </div>
+          <div class="days-left" style="color: #4f3ff0;">
+            2 Days Left
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="project-box-wrapper">
+      <div class="project-box">
+        <div class="project-box-header">
+          <span>December 10, 2020</span>
+          <div class="more-wrapper">
+            <button class="project-btn-more">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                <circle cx="12" cy="12" r="1" />
+                <circle cx="12" cy="5" r="1" />
+                <circle cx="12" cy="19" r="1" /></svg>
+            </button>
+          </div>
+        </div>
+        <div class="project-box-content-header">
+          <p class="box-content-header">Svg Animations</p>
+          <p class="box-content-subheader">Prototyping</p>
+        </div>
+        <div class="box-progress-wrapper">
+          <p class="box-progress-header">Progress</p>
+          <div class="box-progress-bar">
+            <span class="box-progress" style="width: 80%; background-color: #096c86"></span>
+          </div>
+          <p class="box-progress-percentage">80%</p>
+        </div>
+        <div class="project-box-footer">
+          <div class="participants">
+            <img src="https://images.unsplash.com/photo-1587628604439-3b9a0aa7a163?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fHdvbWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+            <img src="https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1215&q=80" alt="participant">
+            <button class="add-participant" style="color: #096c86;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </button>
+          </div>
+          <div class="days-left" style="color: #096c86;">
+            2 Days Left
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="project-box-wrapper">
+      <div class="project-box" style="background-color: #ffd3e2;">
+        <div class="project-box-header">
+          <span>December 10, 2020</span>
+          <div class="more-wrapper">
+            <button class="project-btn-more">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                <circle cx="12" cy="12" r="1" />
+                <circle cx="12" cy="5" r="1" />
+                <circle cx="12" cy="19" r="1" /></svg>
+            </button>
+          </div>
+        </div>
+        <div class="project-box-content-header">
+          <p class="box-content-header">UI Development</p>
+          <p class="box-content-subheader">Prototyping</p>
+        </div>
+        <div class="box-progress-wrapper">
+          <p class="box-progress-header">Progress</p>
+          <div class="box-progress-bar">
+            <span class="box-progress" style="width: 20%; background-color: #df3670"></span>
+          </div>
+          <p class="box-progress-percentage">20%</p>
+        </div>
+        <div class="project-box-footer">
+          <div class="participants">
+            <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+            <img src="https://images.unsplash.com/photo-1587628604439-3b9a0aa7a163?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fHdvbWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+            <button class="add-participant" style="color: #df3670;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </button>
+          </div>
+          <div class="days-left" style="color: #df3670;">
+            2 Days Left
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="project-box-wrapper">
+      <div class="project-box" style="background-color: #c8f7dc;">
+        <div class="project-box-header">
+          <span>December 10, 2020</span>
+          <div class="more-wrapper">
+            <button class="project-btn-more">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                <circle cx="12" cy="12" r="1" />
+                <circle cx="12" cy="5" r="1" />
+                <circle cx="12" cy="19" r="1" /></svg>
+            </button>
+          </div>
+        </div>
+        <div class="project-box-content-header">
+          <p class="box-content-header">Data Analysis</p>
+          <p class="box-content-subheader">Prototyping</p>
+        </div>
+        <div class="box-progress-wrapper">
+          <p class="box-progress-header">Progress</p>
+          <div class="box-progress-bar">
+            <span class="box-progress" style="width: 60%; background-color: #34c471"></span>
+          </div>
+          <p class="box-progress-percentage">60%</p>
+        </div>
+        <div class="project-box-footer">
+          <div class="participants">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+            <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+            <button class="add-participant" style="color: #34c471;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </button>
+          </div>
+          <div class="days-left" style="color: #34c471;">
+            2 Days Left
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="project-box-wrapper">
+      <div class="project-box" style="background-color: #d5deff;">
+        <div class="project-box-header">
+          <span>December 10, 2020</span>
+          <div class="more-wrapper">
+            <button class="project-btn-more">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                <circle cx="12" cy="12" r="1" />
+                <circle cx="12" cy="5" r="1" />
+                <circle cx="12" cy="19" r="1" /></svg>
+            </button>
+          </div>
+        </div>
+        <div class="project-box-content-header">
+          <p class="box-content-header">Web Designing</p>
+          <p class="box-content-subheader">Prototyping</p>
+        </div>
+        <div class="box-progress-wrapper">
+          <p class="box-progress-header">Progress</p>
+          <div class="box-progress-bar">
+            <span class="box-progress" style="width: 40%; background-color: #4067f9"></span>
+          </div>
+          <p class="box-progress-percentage">40%</p>
+        </div>
+        <div class="project-box-footer">
+          <div class="participants">
+            <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+            <img src="https://images.unsplash.com/photo-1583195764036-6dc248ac07d9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2555&q=80" alt="participant">
+            <button class="add-participant" style="color: #4067f9;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </button>
+          </div>
+          <div class="days-left" style="color: #4067f9;">
+            2 Days Left
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="messages-section">
+  <button class="messages-close">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+      <circle cx="12" cy="12" r="10" />
+      <line x1="15" y1="9" x2="9" y2="15" />
+      <line x1="9" y1="9" x2="15" y2="15" /></svg>
+  </button>
+  <div class="projects-section-header">
+    <p>Client Messages</p>
+  </div>
+  <div class="messages">
+    <div class="message-box">
+      <img src="https://images.squarespace-cdn.com/content/v1/59b8357cbebafb5c24d3b950/1613673991376-IRCXD6QOLO89VQV1RZMN/00094.png?format=1000w" alt="profile image">
+      <div class="message-content">
+        <div class="message-header">
+          <div class="name">Johnny Cash</div>
+          <div class="star-checkbox">
+            <input type="checkbox" id="star-1">
+            <label for="star-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+            </label>
+          </div>
+        </div>
+        <p class="message-line">
+          I got your first assignment. It was quite good. 🥳 We can continue with the next assignment.
+        </p>
+        <p class="message-line time">
+          Dec, 12
+        </p>
+      </div>
+    </div>
+    <div class="message-box">
+      <img src="https://static01.nyt.com/images/2013/11/22/arts/22BETTE/22BETTE-superJumbo-v2.jpg" alt="profile image">
+      <div class="message-content">
+        <div class="message-header">
+          <div class="name">Bettie Page</div>
+          <div class="star-checkbox">
+            <input type="checkbox" id="star-2">
+            <label for="star-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+            </label>
+          </div>
+        </div>
+        <p class="message-line">
+          Hey, can tell me about progress of project? I'm waiting for your response.
+        </p>
+        <p class="message-line time">
+          Dec, 12
+        </p>
+      </div>
+    </div>
+    <div class="message-box">
+      <img src="https://news.artnet.com/app/news-upload/2015/01/elvis-presley-ca-1950s-everett.jpg" alt="profile image">
+      <div class="message-content">
+        <div class="message-header">
+          <div class="name">Elvis Presley</div>
+          <div class="star-checkbox">
+            <input type="checkbox" id="star-3">
+            <label for="star-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+            </label>
+          </div>
+        </div>
+        <p class="message-line">
+          Awesome! 🤩 I like it. We can schedule a meeting for the next one.
+        </p>
+        <p class="message-line time">
+          Dec, 12
+        </p>
+      </div>
+    </div>
+    <div class="message-box">
+      <img src="data:image/jpeg;base64,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" alt="profile image">
+      <div class="message-content">
+        <div class="message-header">
+          <div class="name">Marilyn Monroe</div>
+          <div class="star-checkbox">
+            <input type="checkbox" id="star-4">
+            <label for="star-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+            </label>
+          </div>
+        </div>
+        <p class="message-line">
+          I am really impressed! Can't wait to see the final result.
+        </p>
+        <p class="message-line time">
+          Dec, 11
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
